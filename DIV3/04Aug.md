@@ -120,5 +120,48 @@ https://codeforces.com/blog/entry/155666
 ```
 ## 3b
 ```cpp
+#include <bits/stdc++.h>
 
+using namespace std;
+
+int main() {
+        int t;
+        cin >> t;
+        while (t--) {
+            int n;
+            cin >> n;
+            string a, b;
+            cin >> a >> b;
+            vector < int > kk1, kk2;
+          long long  ans = 0;
+          
+       
+            for (int k = 0; k < 2; k++) {
+
+                for (int i = k; i < n; i += 2) {
+                    if (a[i] == '1') kk1.push_back(i);
+                    if (b[i] == '1') kk2.push_back(i);
+                }
+                if(kk1.size()!=kk2.size()){
+                    cout<<-1<<endl;
+                    goto nxt;
+                }
+            }
+            
+                for (int i = 0; i < kk1.size(); i++)
+                ans += abs(kk1[i] - kk2[i]) / 2;
+                cout << ans;
+            
+            cout << endl;
+            nxt:;
+
+        }
+}
 ```
+### problem
+sometimes , when the code recreate the vector , for every loop, it makes the flow easier,
+
+sometimes, although the variables r of int , sum or multiply leads to long or ll
+
+sometimes, although ur ocde is correct , but time complexity makes things difficult , so keep ur functions minimal.
+
